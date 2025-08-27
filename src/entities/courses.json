@@ -1,0 +1,84 @@
+
+{
+  "name": "courses",
+  "options": {
+    "validator": {
+      "$jsonSchema": {
+        "bsonType": "object",
+        "required": ["courseId", "title", "description", "price", "duration", "category", "teacherId", "createdAt"],
+        "properties": {
+          "courseId": {
+            "bsonType": "string",
+            "description": "Unique course identifier"
+          },
+          "title": {
+            "bsonType": "string",
+            "description": "Course title"
+          },
+          "description": {
+            "bsonType": "string",
+            "description": "Course description"
+          },
+          "price": {
+            "bsonType": "number",
+            "minimum": 0,
+            "description": "Course price in USD"
+          },
+          "duration": {
+            "bsonType": "string",
+            "description": "Course duration"
+          },
+          "category": {
+            "bsonType": "string",
+            "enum": ["quran", "hadith", "fiqh", "arabic", "islamic-studies", "tajweed"]
+          },
+          "level": {
+            "bsonType": "string",
+            "enum": ["beginner", "intermediate", "advanced"]
+          },
+          "teacherId": {
+            "bsonType": "string",
+            "description": "Assigned teacher ID"
+          },
+          "imageUrl": {
+            "bsonType": "string",
+            "description": "Course image URL"
+          },
+          "syllabus": {
+            "bsonType": "array",
+            "description": "Course syllabus items"
+          },
+          "objectives": {
+            "bsonType": "array",
+            "description": "Learning objectives"
+          },
+          "schedule": {
+            "bsonType": "string",
+            "description": "Class schedule"
+          },
+          "isActive": {
+            "bsonType": "bool",
+            "description": "Course availability status"
+          },
+          "creator": {
+            "bsonType": "string",
+            "description": "Course creator"
+          },
+          "createdAt": {
+            "bsonType": "string",
+            "title": "datetime",
+            "description": "ISO 8601 datetime string (UTC): YYYY-MM-DDTHH:mm:ss.sssZ"
+          },
+          "updatedAt": {
+            "bsonType": "string",
+            "title": "datetime",
+            "description": "ISO 8601 datetime string (UTC): YYYY-MM-DDTHH:mm:ss.sssZ"
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "validationLevel": "moderate",
+    "validationAction": "warn"
+  }
+}

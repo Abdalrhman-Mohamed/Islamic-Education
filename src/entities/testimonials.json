@@ -1,0 +1,65 @@
+
+{
+  "name": "testimonials",
+  "options": {
+    "validator": {
+      "$jsonSchema": {
+        "bsonType": "object",
+        "required": ["testimonialId", "studentName", "content", "rating", "createdAt"],
+        "properties": {
+          "testimonialId": {
+            "bsonType": "string",
+            "description": "Unique testimonial identifier"
+          },
+          "studentName": {
+            "bsonType": "string",
+            "description": "Student name"
+          },
+          "content": {
+            "bsonType": "string",
+            "description": "Testimonial content"
+          },
+          "rating": {
+            "bsonType": "int",
+            "minimum": 1,
+            "maximum": 5,
+            "description": "Student rating"
+          },
+          "courseId": {
+            "bsonType": "string",
+            "description": "Related course ID"
+          },
+          "studentPhoto": {
+            "bsonType": "string",
+            "description": "Student photo URL"
+          },
+          "location": {
+            "bsonType": "string",
+            "description": "Student location"
+          },
+          "isPublished": {
+            "bsonType": "bool",
+            "description": "Publication status"
+          },
+          "creator": {
+            "bsonType": "string",
+            "description": "Testimonial creator"
+          },
+          "createdAt": {
+            "bsonType": "string",
+            "title": "datetime",
+            "description": "ISO 8601 datetime string (UTC): YYYY-MM-DDTHH:mm:ss.sssZ"
+          },
+          "updatedAt": {
+            "bsonType": "string",
+            "title": "datetime",
+            "description": "ISO 8601 datetime string (UTC): YYYY-MM-DDTHH:mm:ss.sssZ"
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "validationLevel": "moderate",
+    "validationAction": "warn"
+  }
+}

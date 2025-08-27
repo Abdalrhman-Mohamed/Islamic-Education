@@ -1,0 +1,78 @@
+
+{
+  "name": "teachers",
+  "options": {
+    "validator": {
+      "$jsonSchema": {
+        "bsonType": "object",
+        "required": ["teacherId", "name", "specialization", "experience", "createdAt"],
+        "properties": {
+          "teacherId": {
+            "bsonType": "string",
+            "description": "Unique teacher identifier"
+          },
+          "name": {
+            "bsonType": "string",
+            "description": "Teacher full name"
+          },
+          "specialization": {
+            "bsonType": "string",
+            "description": "Teacher specialization"
+          },
+          "biography": {
+            "bsonType": "string",
+            "description": "Teacher biography"
+          },
+          "qualifications": {
+            "bsonType": "array",
+            "description": "Teacher qualifications"
+          },
+          "experience": {
+            "bsonType": "int",
+            "minimum": 0,
+            "description": "Years of teaching experience"
+          },
+          "photoUrl": {
+            "bsonType": "string",
+            "description": "Teacher photo URL"
+          },
+          "certifications": {
+            "bsonType": "array",
+            "description": "Teacher certifications"
+          },
+          "languages": {
+            "bsonType": "array",
+            "description": "Languages spoken"
+          },
+          "rating": {
+            "bsonType": "number",
+            "minimum": 0,
+            "maximum": 5,
+            "description": "Teacher rating"
+          },
+          "isActive": {
+            "bsonType": "bool",
+            "description": "Teacher availability status"
+          },
+          "creator": {
+            "bsonType": "string",
+            "description": "Profile creator"
+          },
+          "createdAt": {
+            "bsonType": "string",
+            "title": "datetime",
+            "description": "ISO 8601 datetime string (UTC): YYYY-MM-DDTHH:mm:ss.sssZ"
+          },
+          "updatedAt": {
+            "bsonType": "string",
+            "title": "datetime",
+            "description": "ISO 8601 datetime string (UTC): YYYY-MM-DDTHH:mm:ss.sssZ"
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "validationLevel": "moderate",
+    "validationAction": "warn"
+  }
+}
